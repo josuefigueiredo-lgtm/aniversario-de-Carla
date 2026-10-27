@@ -13,7 +13,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 Manrope,system-ui,sans-serif;overflow-x:hidden}
 h1,h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;margin:0}
-.hero{min-height:80vh;display:flex;flex-direction:row; gap: 250px; justify-content:center;padding:48px 24px 24px;max-width:900px;margin:auto}
+.hero{min-height:80vh;display:flex;flex-direction:row;gap:30px; justify-content:center;padding:48px 24px 24px;max-width:2000px;margin:auto}
 .hero h1{font-size:clamp(3rem,13vw,7rem);line-height:.95;font-style:italic;color:var(--ink)}
 .hero p{color:var(--soft);max-width:34ch;margin:20px 0 0}
 .strip{position:relative;padding:24px 0;background:var(--bg2)}
@@ -52,8 +52,42 @@ button.b{font:600 15px Manrope,sans-serif;background:var(--rose);color:#fff;bord
 }
 .data{
   position: relative;
-  left: 1000px;
+  left: 700px;
   top: 800px;
+}
+
+.imagem {
+  width: min(100%, 520px);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.imagem img {
+  display: block;
+
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .imagem {
+    width: 100%;
+    max-width: 100%;
+    flex: auto;
+  }
+  .data{
+    position: relative;
+  left: 300px;
+  top: 250px;
+  font-size: 7px;
+  }
+}
+@media(max-width:500px){
+  .data{
+    position:relative;
+    left:180px;
+    top: 180px;
+  }
 }
 </style>
 </head>
@@ -65,8 +99,8 @@ button.b{font:600 15px Manrope,sans-serif;background:var(--rose);color:#fff;bord
 <p>Um cantinho na internet só para dizer que eu te amo.</p>
 </div>
 
-<div>
-  <img src="./fotos/ceu.png"> </div>
+<div class="imagem">
+  <img src="./fotos/ceu.png" > </div>
   
 </header>
 
