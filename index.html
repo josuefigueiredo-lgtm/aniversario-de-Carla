@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pra você, meu amor</title>
+<title>Pra você, Carla</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,600&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#1e0b16;--bg2:#2c1120;--ink:#f6e9dc;--soft:#c9a9a6;--gold:#e9b872;--rose:#d9557a;
@@ -13,7 +13,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 Manrope,system-ui,sans-serif;overflow-x:hidden}
 h1,h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;margin:0}
-.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;padding:48px 24px 24px;max-width:900px;margin:auto}
+.hero{min-height:80vh;display:flex;flex-direction:row; gap: 250px; justify-content:center;padding:48px 24px 24px;max-width:900px;margin:auto}
 .hero h1{font-size:clamp(3rem,13vw,7rem);line-height:.95;font-style:italic;color:var(--ink)}
 .hero p{color:var(--soft);max-width:34ch;margin:20px 0 0}
 .strip{position:relative;padding:24px 0;background:var(--bg2)}
@@ -44,13 +44,33 @@ button.b{font:600 15px Manrope,sans-serif;background:var(--rose);color:#fff;bord
 #msg{min-height:1.7em;color:var(--gold);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.4rem;font-style:italic;margin-top:14px}
 #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
 @media (prefers-reduced-motion:reduce){.track{scroll-behavior:auto}}
+.titulo{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 250px;
+}
+.data{
+  position: relative;
+  left: 1000px;
+  top: 800px;
+}
 </style>
 </head>
 <body>
+  <div class="data"><h1>O céu do dia 06 de julho de 2026</h1></div>
 <header class="hero">
-<h1>Pra você,<br>meu amor</h1>
+  <div class="titulo">
+<h1>Pra você,<br>amor</h1>
 <p>Um cantinho na internet só para dizer que eu te amo.</p>
+</div>
+
+<div>
+  <img src="./fotos/ceu.png"> </div>
+  
 </header>
+
+
 
 <section class="strip" aria-label="Nossas fotos">
 <button class="arrow prev" id="prev" type="button" aria-label="Foto anterior">&#8249;</button>
@@ -60,11 +80,16 @@ button.b{font:600 15px Manrope,sans-serif;background:var(--rose);color:#fff;bord
 
 <section class="letter">
 
-<p>Amor, eu poderia escrever em código, mas hoje quero escrever com palavras simples: obrigado por existir na minha vida.</p>
-<p>Com você, os dias comuns ganham cor. Você é o meu lugar de paz, o meu riso mais fácil e a pessoa com quem eu quero dividir tudo, das conquistas grandes aos silêncios pequenos.</p>
-<p>Amo o seu jeito, o seu cuidado, a forma como você me olha e me faz acreditar que tudo vai dar certo. Cada foto aqui é um pedaço da nossa história, e eu quero muitas outras ao seu lado.</p>
-<p>Obrigado por me escolher todos os dias. Eu te escolho de volta, sempre.</p>
-<p class="sign">Com todo o meu amor.</p>
+<p>Amor, eu poderia escrever em código, mas hoje quero usar palavras simples. Obrigado por estar na minha vida.
+</p>
+
+<p>
+Com você, os dias simples ficam mais vivos. Você é meu refúgio, meu sorriso mais sincero e a pessoa com quem quero compartilhar tudo. Quero dividir desde as grandes conquistas até os pequenos silêncios.</p>
+
+<p>Gosto do seu jeito, do seu cuidado, da forma como você me olha e me faz acreditar que tudo vai ficar bem. Cada foto aqui mostra um pouco da nossa história (Até as idas ao hospital). Quero muitas outras com você.
+</p>
+
+<p class="sign">Obrigado por me escolher todos os dias. Eu também te escolho, sempre.</p>
 </section>
 
 <section class="game">
@@ -140,7 +165,7 @@ function pick(pos){
   document.getElementById('moves').textContent=moves+' trocas';
   if(solved()){
     board.classList.add('done');
-    document.getElementById('msg').textContent='Aqui estamos nós, juntinhos. Eu te amo!';
+    document.getElementById('msg').textContent='Eu te amo!';
     fireworks();
   }
 }
